@@ -1,9 +1,12 @@
-FROM python:3.8
+FROM python:3.10
 
 WORKDIR /twitter_api_scrape
 
-RUN pip install requests pandas
-
 COPY . /twitter_api_scrape
 
-CMD ["python", "your_script.py"]
+RUN pip install -r requirements.txt
+
+RUN mkdir -p downloaded_media/tweet && mkdir -p downloaded_media/link
+
+
+CMD ["sleep", "infinity"]

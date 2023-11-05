@@ -7,10 +7,13 @@ docker build -t mpi-telegram-scraper .
 ```bash
 docker run --rm \
     --name mpi-telegram-scraper \
-    -v sda-telgram-scraper.session:/telegram_scrapper/ \
-    -e API_ID=27268549 \
-    -e API_HASH=d390faee1fe7f79fe0b081324a343356 \
-    -e PHONE=+919724111939 \
-    -e USERNAME=ptah112  \
+    -v $(pwd)/sda-telgram-scraper.session:/telegram_scaper/sda-telegram-scraper.session:ro \
+    -e API_ID=25490965 \
+    -e API_HASH=48bd72d57fb01b87965eb14d87c0f453 \
+    -e PHONE=+16174305353 \
+    -e USERNAME=mpisda  \
+    -e HOSTNAME=localhost \
+    -e PORT=8080 \
+    -p 8080:8080 \
     mpi-telegram-scraper
 ```

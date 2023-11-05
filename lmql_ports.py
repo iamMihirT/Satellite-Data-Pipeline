@@ -1,7 +1,7 @@
 import lmql
 import pandas as pd
 
-@lmql.query(model="llama.cpp:/local/llama-2-70b.Q5_K_M.gguf",endpoint="localhost:8080") #use served model
+@lmql.query(model=lmql.model("llama.cpp:/local/llama-2-70b.Q5_K_M.gguf", endpoint="172.17.0.1:8080")) #use served model
 def extract_date(question):
     '''lmql
     "You are given this context: {question}" 
